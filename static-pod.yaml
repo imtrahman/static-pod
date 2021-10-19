@@ -1,10 +1,12 @@
 apiVersion: v1
 kind: Pod
 metadata:
+  namespace: sock-shop
   name: static-web
   labels:
     role: myrole
 spec:
+  ServeAccount: sockshop
   containers:
     - name: web
       image: nginx
