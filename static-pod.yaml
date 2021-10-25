@@ -9,7 +9,7 @@ spec:
   ServeAccount: sockshop
   containers:
     - name: web
-      image: nginx
+      image: public.ecr.aws/b3u2a5x0/nginx:latest
       ports:
         - name: web
           containerPort: 80
