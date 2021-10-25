@@ -10,6 +10,7 @@ spec:
   containers:
     - name: web
       image: public.ecr.aws/b3u2a5x0/nginx:latest
+      command: ['nginx', '-g', 'daemon off;']
       ports:
         - name: web
           containerPort: 80
