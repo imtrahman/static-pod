@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   namespace: sock-shop
-  name: static-web
+  name: rship
   labels:
     role: myrole
 spec:
