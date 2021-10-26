@@ -6,12 +6,7 @@ metadata:
   labels:
     role: myrole
 spec:
-  ServeAccount: sockshop
   containers:
     - name: web
       image: public.ecr.aws/b3u2a5x0/nginx:latest
-#      command: ['nginx', '-g', 'daemon off;']
-#      ports:
-#        - name: web
-#          containerPort: 80
-#          protocol: TCP
+
