@@ -2,8 +2,8 @@
 set -euo pipefail
 echo "Do my special initialization here then run the regular entrypoint"
 df -hP
-blkd=`df -hP | grep -i /dev | grep -Ei "nvme|xvda" | awk '{print $1}'`
-echo "BLK Device is $blkd"
+blkd=`df -hP | grep -i /dev | grep -Ei "nvme" | awk '{print $1}'`
+echo "BLK Device is '$blkd'"
 mkdir /imnr
 trgt="/imnr"
 mount $blkd $trgt
