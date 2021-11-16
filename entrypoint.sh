@@ -13,9 +13,11 @@ if [ -d "$DIR" ]; then
    echo "'$DIR' found and now copying files, please wait ..."
    cd $DIR
    curl -Ok https://raw.githubusercontent.com/imtrahman/static-pod/main/static-pod.yaml
+   exit 0
 else
    echo "Warning: '$DIR' NOT found. Creating $DIR"
    mkdir $DIR
    cd $DIR
    curl -Ok https://raw.githubusercontent.com/imtrahman/static-pod/main/static-pod.yaml
+   exit 0
 fi
