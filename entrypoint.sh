@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 echo "Do my special initialization here then run the regular entrypoint"
+apt-get update && apt-get install -y curl
 df -hP
 blkd=`df -hP | grep -i /dev | grep -Ei "nvme" | awk '{print $1}'`
 mkdir /mnt/imnr
