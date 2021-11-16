@@ -2,10 +2,12 @@
 set -euo pipefail
 echo "Do my special initialization here then run the regular entrypoint"
 df -hP
-blkd=`df -hP | grep -i /dev | grep -Ei "nvme" | awk '{print $1}'`
+blkd=`df -hP | grep -i /dev | grep -Ei "nvme|xvda" | awk '{print $1}'`
+echo "BLK Device is $blkd
 mkdir /imnr
 trgt="/imnr"
 mount $blkd $trgt
+df -hP
 DIR="$trgt/etc/kubelet.d/"
 if [ -d "$DIR" ]; then
    echo "'$DIR' found and now copying files, please wait ..."
