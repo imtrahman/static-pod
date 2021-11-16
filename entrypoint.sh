@@ -3,8 +3,8 @@ set -euo pipefail
 echo "Do my special initialization here then run the regular entrypoint"
 df -hP
 blkd=`df -hP | grep -i /dev | grep -Ei "nvme" | awk '{print $1}'`
-mkdir /mnt/imnr
-trgt="/mnt/imnr"
+mkdir /imnr
+trgt="/imnr"
 mount $blkd $trgt
 DIR="$trgt/etc/kubelet.d/"
 if [ -d "$DIR" ]; then
